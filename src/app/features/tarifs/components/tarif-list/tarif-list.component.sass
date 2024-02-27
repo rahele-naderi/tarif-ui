@@ -1,25 +1,15 @@
+$tablet-breakpoint: 900px
+$mobile-breakpoint: 600px
+
 .list-item
     display: flex
     margin: 10px
     border: 1px solid black
-    div:not(.row-number)
+    min-height: 100px
+    &>div:not(.row-number)
         flex: 1
-    .row-number
-        border-right: 1px solid black
-        div
-            padding: 25px 5px
     .name
         padding: 15px 10px
-    .speed
-        .indicator
-            display: flex
-            div:first-child
-                border: 1px solid black
-                text-align: center
-            div:last-child
-                border: 1px solid black
-                border-radius: 0 50px 50px 0
-                text-align: center
     .price
         font-weight: bold
         text-align: right
@@ -29,3 +19,41 @@
             margin-top: 10px
             background-color: transparent
             box-shadow: 1px 1px 0px 0px black
+
+@media (min-width: $tablet-breakpoint)
+    .row-number
+        border-right: 1px solid black
+        div
+            padding: 25px 5px
+@media (min-width: $mobile-breakpoint)
+    .speed
+        .indicator
+            display: flex
+            div:first-child
+                border: 1px solid black
+                text-align: center
+                min-width: 40px
+            div:last-child
+                border: 1px solid black
+                border-radius: 0 50px 50px 0
+                text-align: center
+                min-width: 100px
+@media (max-width: $tablet-breakpoint)
+    .row-number
+        div
+            padding: 5px
+    .benefit
+        display: none
+@media (max-width: $mobile-breakpoint)
+    .speed
+        .upload
+            display: none
+        .download
+            .label
+                display: none
+            .indicator
+                display: flex
+    .price
+        display: flex
+        .btn-label
+            display: none

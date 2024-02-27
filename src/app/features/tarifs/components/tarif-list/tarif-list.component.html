@@ -4,11 +4,15 @@
     placeholder="download..."
     type="text"
   />
+</div>
+<div>
   <input
     [formControl]="searchUploadControl"
     placeholder="upload..."
     type="text"
   />
+</div>
+<div>
   <input
     [formControl]="searchPriceControl"
     placeholder="price..."
@@ -21,15 +25,15 @@
   </div>
   <div class="name">{{ tarif.name }}</div>
   <div class="speed">
-    <div>
-      <div>download</div>
+    <div class="download">
+      <div class="label">download</div>
       <div class="indicator">
         <div>&#x2B07;</div>
         <div>{{ tarif.download }} Mbit/s</div>
       </div>
     </div>
-    <div>
-      <div>upload</div>
+    <div class="upload">
+      <div class="label">upload</div>
       <div class="indicator">
         <div>&#x2B06;</div>
         <div>{{ tarif.upload }} Mbit/s</div>
@@ -43,6 +47,6 @@
   </div>
   <div class="price">
     <div>{{ tarif.price | currency : "EUR" : "symbol" }}</div>
-    <button>To Tarif ></button>
+    <button><span class="btn-label">To Tarif</span> ></button>
   </div>
 </div>
