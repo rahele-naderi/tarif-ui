@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TarifListPageComponent } from './tarif-list-page.component';
 import { By } from '@angular/platform-browser';
+import { TarifListComponent } from '../../features/tarifs/components/tarif-list/tarif-list.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TarifListPageComponent', () => {
   let component: TarifListPageComponent;
@@ -9,7 +11,11 @@ describe('TarifListPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TarifListPageComponent]
+      imports: [TarifListPageComponent],
+    })
+    .overrideComponent(TarifListPageComponent, {
+      remove: { imports: [TarifListComponent] },
+      add: { schemas: [CUSTOM_ELEMENTS_SCHEMA] }
     })
     .compileComponents();
     
