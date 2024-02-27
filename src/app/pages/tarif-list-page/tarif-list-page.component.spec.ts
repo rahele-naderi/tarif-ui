@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListPageComponent } from './list-page.component';
+import { TarifListPageComponent } from './tarif-list-page.component';
 
-describe('ListPageComponent', () => {
-  let component: ListPageComponent;
-  let fixture: ComponentFixture<ListPageComponent>;
+describe('TarifListPageComponent', () => {
+  let component: TarifListPageComponent;
+  let fixture: ComponentFixture<TarifListPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListPageComponent]
+      imports: [TarifListPageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ListPageComponent);
+    fixture = TestBed.createComponent(TarifListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
