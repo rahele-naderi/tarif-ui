@@ -1,3 +1,8 @@
+<div>
+    <input [formControl]="searchDownloadControl" placeholder="download..." type="text" />
+    <input [formControl]="searchUploadControl" placeholder="upload..." type="text" />
+    <input [formControl]="searchPriceControl" placeholder="price..." type="text" />
+</div>
 <div *ngFor="let tarif of tarifs$ | async; let index = index"> 
     <div>{{index + 1}}</div>
     <div>{{tarif.name}}</div>
