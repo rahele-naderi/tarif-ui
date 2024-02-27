@@ -1,20 +1,48 @@
 <div>
-    <input [formControl]="searchDownloadControl" placeholder="download..." type="text" />
-    <input [formControl]="searchUploadControl" placeholder="upload..." type="text" />
-    <input [formControl]="searchPriceControl" placeholder="price..." type="text" />
+  <input
+    [formControl]="searchDownloadControl"
+    placeholder="download..."
+    type="text"
+  />
+  <input
+    [formControl]="searchUploadControl"
+    placeholder="upload..."
+    type="text"
+  />
+  <input
+    [formControl]="searchPriceControl"
+    placeholder="price..."
+    type="text"
+  />
 </div>
-<div *ngFor="let tarif of tarifs$ | async; let index = index"> 
-    <div>{{index + 1}}</div>
-    <div>{{tarif.name}}</div>
+<div *ngFor="let tarif of tarifs$ | async; let index = index" class="list-item">
+  <div class="row-number">
+    <div>{{ index + 1 }}</div>
+  </div>
+  <div class="name">{{ tarif.name }}</div>
+  <div class="speed">
     <div>
-        <div>{{tarif.download}}</div>
-        <div>{{tarif.upload}}</div>
+      <div>download</div>
+      <div class="indicator">
+        <div>&#x2B07;</div>
+        <div>{{ tarif.download }} Mbit/s</div>
+      </div>
     </div>
     <div>
-        <ul><li *ngFor="let benefit of tarif.benefits">{{benefit}}</li></ul>
+      <div>upload</div>
+      <div class="indicator">
+        <div>&#x2B06;</div>
+        <div>{{ tarif.upload }} Mbit/s</div>
+      </div>
     </div>
-    <div>
-        <div>{{tarif.price | currency : 'EUR' : 'symbol'}}</div>
-        <button>To Tarif ></button>
-    </div>
+  </div>
+  <div class="benefit">
+    <ul>
+      <li *ngFor="let benefit of tarif.benefits">{{ benefit }}</li>
+    </ul>
+  </div>
+  <div class="price">
+    <div>{{ tarif.price | currency : "EUR" : "symbol" }}</div>
+    <button>To Tarif ></button>
+  </div>
 </div>
