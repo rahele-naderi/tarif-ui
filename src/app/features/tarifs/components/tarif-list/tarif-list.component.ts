@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { GetTarifsService } from '../../services/get-tarifs.service';
-import { AsyncPipe, NgFor } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'vrx-tarif-list',
   standalone: true,
-  imports: [NgFor, AsyncPipe],
+  imports: [NgFor, AsyncPipe, CurrencyPipe],
+  providers: [ { provide: LOCALE_ID, useValue: 'de-DE' } ],
   templateUrl: './tarif-list.component.html',
   styleUrl: './tarif-list.component.sass'
 })

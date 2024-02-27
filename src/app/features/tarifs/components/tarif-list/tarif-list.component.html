@@ -1,1 +1,15 @@
-<p>tarif-list works!</p>
+<div *ngFor="let tarif of tarifs$ | async; let index = index"> 
+    <div>{{index + 1}}</div>
+    <div>{{tarif.name}}</div>
+    <div>
+        <div>{{tarif.download}}</div>
+        <div>{{tarif.upload}}</div>
+    </div>
+    <div>
+        <ul><li *ngFor="let benefit of tarif.benefits">{{benefit}}</li></ul>
+    </div>
+    <div>
+        <div>{{tarif.price | currency : 'EUR' : 'symbol'}}</div>
+        <button>To Tarif ></button>
+    </div>
+</div>
