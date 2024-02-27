@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TarifListPageComponent } from './tarif-list-page.component';
+import { By } from '@angular/platform-browser';
 
 describe('TarifListPageComponent', () => {
   let component: TarifListPageComponent;
@@ -20,4 +21,10 @@ describe('TarifListPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render tarif-list component', () => {
+    const tarifList = fixture.debugElement.query(By.css('vrx-tarif-list'));
+    expect(tarifList).not.toBeNull();
+  });
+  
 });
